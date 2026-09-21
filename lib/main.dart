@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/ppg_screen.dart';
+import 'screens/reaction_time_screen.dart';
 
 void main() {
   runApp(const VitalScanApp());
@@ -116,13 +117,37 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const ReactionTimeScreen(),
+                      ),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: const Color.fromARGB(255, 246, 243, 243),
+                    side: const BorderSide(color: Color.fromARGB(255, 241, 240, 240)),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Text('Reaction Time Test',
+                      style: TextStyle(fontSize: 16)),
+                ),
+              ),
               const SizedBox(height: 16),
               const Center(
                 child: Text(
                   'Not a medical device — for screening only',
                   style: TextStyle(
                     fontSize: 12,
-                    color: Color(0xFF6B6661),
+                    color: Color.fromARGB(255, 236, 232, 232),
                   ),
                 ),
               ),
