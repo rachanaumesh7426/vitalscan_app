@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/ppg_screen.dart';
 import 'screens/reaction_time_screen.dart';
+import 'screens/voice_screen.dart';
 
 void main() {
   runApp(const VitalScanApp());
@@ -141,7 +142,31 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 16)),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const VoiceScreen(),
+                      ),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFFE8E4DE),
+                    side: const BorderSide(color: Color(0xFF34302D)),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Text('Voice & Breathing Test',
+                      style: TextStyle(fontSize: 16)),
+                ),
+              ),
+            const SizedBox(height: 16),
               const Center(
                 child: Text(
                   'Not a medical device — for screening only',
